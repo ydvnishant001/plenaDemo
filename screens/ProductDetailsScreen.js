@@ -39,8 +39,10 @@ const ProductDetailsScreen = ({navigation, route}) => {
     }
 
     const onBuy = () => {
-        if(!shoppingCart[productIndex].count) onAddToCart(AddedToCartKey)//if open product not added
         navigation.navigate(ShoppingCartKey)
+        setTimeout(() => {
+            if(!shoppingCart[productIndex].count) onAddToCart(AddedToCartKey)//if open product not added
+        }, 400);
     }
 
     const getCartCount = () => {
